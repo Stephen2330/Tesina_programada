@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SOPORTEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBL_Caso">
+    <Key>
+      <PropertyRef Name="TN_IdCaso" />
+    </Key>
+    <Property Name="TN_IdCaso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TN_IdPeriodoGarantia" Type="int" />
+    <Property Name="TN_IdFechaCreacionCaso" Type="int" />
+    <Property Name="TN_IdEmpleado" Type="int" />
+    <Property Name="TN_IdMunicipalidad" Type="int" />
+    <Property Name="TN_IdCliente" Type="int" />
+    <Property Name="TN_IdProducto" Type="int" />
+    <Property Name="TN_IdDescripcionCaso" Type="int" />
+    <Property Name="TN_IdPrioridadCaso" Type="int" />
+    <Property Name="TN_IdEstadoCaso" Type="int" />
+    <Property Name="TN_IdFechaCierreCaso" Type="int" />
+    <Property Name="TN_IdUsuario" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_Cliente">
+    <Key>
+      <PropertyRef Name="TN_IdCliente" />
+    </Key>
+    <Property Name="TN_IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_DescripcionCaso">
+    <Key>
+      <PropertyRef Name="TN_IdDescripcionCaso" />
+    </Key>
+    <Property Name="TN_IdDescripcionCaso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+    <Property Name="TC_Observacion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_Empleado">
+    <Key>
+      <PropertyRef Name="TN_IdEmpleado" />
+    </Key>
+    <Property Name="TN_IdEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TN_Cedula" Type="int" />
+    <Property Name="TC_Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="TC_PrimerApellido" Type="varchar" MaxLength="255" />
+    <Property Name="TC_SegundoApellido" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_EstadoCaso">
+    <Key>
+      <PropertyRef Name="TN_IdEstadoCaso" />
+    </Key>
+    <Property Name="TN_IdEstadoCaso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_FechaCierreCaso">
+    <Key>
+      <PropertyRef Name="TN_IdFechaCierreCaso" />
+    </Key>
+    <Property Name="TN_IdFechaCierreCaso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TD_FechaCierreCaso" Type="date" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_FechaCreacionCaso">
+    <Key>
+      <PropertyRef Name="TN_IdFechaCreacionCaso" />
+    </Key>
+    <Property Name="TN_IdFechaCreacionCaso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TD_FechaCreacionCaso" Type="date" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_Municipalidad">
+    <Key>
+      <PropertyRef Name="TN_IdMunicipalidad" />
+    </Key>
+    <Property Name="TN_IdMunicipalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_PeriodoGarantia">
+    <Key>
+      <PropertyRef Name="TN_IdPeriodoGarantia" />
+    </Key>
+    <Property Name="TN_IdPeriodoGarantia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_PeriodoGarantia" Type="varchar" MaxLength="255" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_PrioridadCaso">
+    <Key>
+      <PropertyRef Name="TN_IdPrioridadCaso" />
+    </Key>
+    <Property Name="TN_IdPrioridadCaso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_Producto">
+    <Key>
+      <PropertyRef Name="TN_IdProducto" />
+    </Key>
+    <Property Name="TN_IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_Rol">
+    <Key>
+      <PropertyRef Name="TN_IdRol" />
+    </Key>
+    <Property Name="TN_IdRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC_Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="TC_Descripcion" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBL_Usuario">
+    <Key>
+      <PropertyRef Name="TN_IdUsuario" />
+    </Key>
+    <Property Name="TN_IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TN_IdRol" Type="int" />
+    <Property Name="TN_Cedula" Type="int" />
+    <Property Name="TC_Nombre" Type="varchar" MaxLength="255" />
+    <Property Name="TC_PrimerApellido" Type="varchar" MaxLength="255" />
+    <Property Name="TC_SegundoApellido" Type="varchar" MaxLength="255" />
+    <Property Name="TC_Correo" Type="varchar" MaxLength="255" />
+    <Property Name="TN_Telefono" Type="int" />
+    <Property Name="TC_Clave" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_TBL_Caso_TBL_Cliente">
+    <End Role="TBL_Cliente" Type="Self.TBL_Cliente" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Cliente">
+        <PropertyRef Name="TN_IdCliente" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_DescripcionCaso">
+    <End Role="TBL_DescripcionCaso" Type="Self.TBL_DescripcionCaso" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_DescripcionCaso">
+        <PropertyRef Name="TN_IdDescripcionCaso" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdDescripcionCaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_Empleado">
+    <End Role="TBL_Empleado" Type="Self.TBL_Empleado" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Empleado">
+        <PropertyRef Name="TN_IdEmpleado" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_EstadoCaso">
+    <End Role="TBL_EstadoCaso" Type="Self.TBL_EstadoCaso" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_EstadoCaso">
+        <PropertyRef Name="TN_IdEstadoCaso" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdEstadoCaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_FechaCierreCaso">
+    <End Role="TBL_FechaCierreCaso" Type="Self.TBL_FechaCierreCaso" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FechaCierreCaso">
+        <PropertyRef Name="TN_IdFechaCierreCaso" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdFechaCierreCaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_FechaCreacionCaso">
+    <End Role="TBL_FechaCreacionCaso" Type="Self.TBL_FechaCreacionCaso" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_FechaCreacionCaso">
+        <PropertyRef Name="TN_IdFechaCreacionCaso" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdFechaCreacionCaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_Municipalidad">
+    <End Role="TBL_Municipalidad" Type="Self.TBL_Municipalidad" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Municipalidad">
+        <PropertyRef Name="TN_IdMunicipalidad" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdMunicipalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_PeriodoGarantia">
+    <End Role="TBL_PeriodoGarantia" Type="Self.TBL_PeriodoGarantia" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PeriodoGarantia">
+        <PropertyRef Name="TN_IdPeriodoGarantia" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdPeriodoGarantia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_PrioridadCaso">
+    <End Role="TBL_PrioridadCaso" Type="Self.TBL_PrioridadCaso" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_PrioridadCaso">
+        <PropertyRef Name="TN_IdPrioridadCaso" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdPrioridadCaso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_Producto">
+    <End Role="TBL_Producto" Type="Self.TBL_Producto" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Producto">
+        <PropertyRef Name="TN_IdProducto" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Caso_TBL_Usuario">
+    <End Role="TBL_Usuario" Type="Self.TBL_Usuario" Multiplicity="0..1" />
+    <End Role="TBL_Caso" Type="Self.TBL_Caso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Usuario">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Principal>
+      <Dependent Role="TBL_Caso">
+        <PropertyRef Name="TN_IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_Usuario_TBL_Rol">
+    <End Role="TBL_Rol" Type="Self.TBL_Rol" Multiplicity="0..1" />
+    <End Role="TBL_Usuario" Type="Self.TBL_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Rol">
+        <PropertyRef Name="TN_IdRol" />
+      </Principal>
+      <Dependent Role="TBL_Usuario">
+        <PropertyRef Name="TN_IdRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_RegistrarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cedula" Type="int" Mode="In" />
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="apellido1" Type="varchar" Mode="In" />
+    <Parameter Name="apellido2" Type="varchar" Mode="In" />
+    <Parameter Name="telefono" Type="int" Mode="In" />
+    <Parameter Name="correo" Type="varchar" Mode="In" />
+    <Parameter Name="clave" Type="varchar" Mode="In" />
+    <Parameter Name="registrado" Type="bit" Mode="InOut" />
+    <Parameter Name="mensaje" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="sp_ValidarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Correo" Type="varchar" Mode="In" />
+    <Parameter Name="Clave" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="SOPORTEModelStoreContainer">
+    <EntitySet Name="TBL_Caso" EntityType="Self.TBL_Caso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Cliente" EntityType="Self.TBL_Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_DescripcionCaso" EntityType="Self.TBL_DescripcionCaso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Empleado" EntityType="Self.TBL_Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_EstadoCaso" EntityType="Self.TBL_EstadoCaso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_FechaCierreCaso" EntityType="Self.TBL_FechaCierreCaso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_FechaCreacionCaso" EntityType="Self.TBL_FechaCreacionCaso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Municipalidad" EntityType="Self.TBL_Municipalidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_PeriodoGarantia" EntityType="Self.TBL_PeriodoGarantia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_PrioridadCaso" EntityType="Self.TBL_PrioridadCaso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Producto" EntityType="Self.TBL_Producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Rol" EntityType="Self.TBL_Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Usuario" EntityType="Self.TBL_Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TBL_Caso_TBL_Cliente" Association="Self.FK_TBL_Caso_TBL_Cliente">
+      <End Role="TBL_Cliente" EntitySet="TBL_Cliente" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_DescripcionCaso" Association="Self.FK_TBL_Caso_TBL_DescripcionCaso">
+      <End Role="TBL_DescripcionCaso" EntitySet="TBL_DescripcionCaso" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_Empleado" Association="Self.FK_TBL_Caso_TBL_Empleado">
+      <End Role="TBL_Empleado" EntitySet="TBL_Empleado" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_EstadoCaso" Association="Self.FK_TBL_Caso_TBL_EstadoCaso">
+      <End Role="TBL_EstadoCaso" EntitySet="TBL_EstadoCaso" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_FechaCierreCaso" Association="Self.FK_TBL_Caso_TBL_FechaCierreCaso">
+      <End Role="TBL_FechaCierreCaso" EntitySet="TBL_FechaCierreCaso" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_FechaCreacionCaso" Association="Self.FK_TBL_Caso_TBL_FechaCreacionCaso">
+      <End Role="TBL_FechaCreacionCaso" EntitySet="TBL_FechaCreacionCaso" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_Municipalidad" Association="Self.FK_TBL_Caso_TBL_Municipalidad">
+      <End Role="TBL_Municipalidad" EntitySet="TBL_Municipalidad" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_PeriodoGarantia" Association="Self.FK_TBL_Caso_TBL_PeriodoGarantia">
+      <End Role="TBL_PeriodoGarantia" EntitySet="TBL_PeriodoGarantia" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_PrioridadCaso" Association="Self.FK_TBL_Caso_TBL_PrioridadCaso">
+      <End Role="TBL_PrioridadCaso" EntitySet="TBL_PrioridadCaso" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_Producto" Association="Self.FK_TBL_Caso_TBL_Producto">
+      <End Role="TBL_Producto" EntitySet="TBL_Producto" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Caso_TBL_Usuario" Association="Self.FK_TBL_Caso_TBL_Usuario">
+      <End Role="TBL_Usuario" EntitySet="TBL_Usuario" />
+      <End Role="TBL_Caso" EntitySet="TBL_Caso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_Usuario_TBL_Rol" Association="Self.FK_TBL_Usuario_TBL_Rol">
+      <End Role="TBL_Rol" EntitySet="TBL_Rol" />
+      <End Role="TBL_Usuario" EntitySet="TBL_Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
